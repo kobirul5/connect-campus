@@ -21,7 +21,7 @@ import {
 
 
 
-interface AuthContextType {
+export interface AuthContextType {
     user: FirebaseUser | null;
     loading: boolean;
     setLoading: (loading: boolean) => void;

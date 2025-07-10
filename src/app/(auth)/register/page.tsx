@@ -13,8 +13,13 @@ type RegisterFormElement = HTMLFormElement & {
 };
 
 export default function SignUp() {
-    const { userCreate, user,updateUserProfile } = useContext(AuthContext);
+    const authContext = useContext(AuthContext);
     const router = useRouter()
+
+    if (!authContext) {
+        throw new Error("AuthContext must be used within an AuthProvider");
+    }
+    const { userCreate,updateUserProfile} = authContext;
 
     const handleRegister = async (e: React.FormEvent<RegisterFormElement>) => {
         e.preventDefault();
