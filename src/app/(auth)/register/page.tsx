@@ -1,28 +1,116 @@
+'use client'
+import { AuthContext } from "@/components/context/AuthProvider";
+import { useRouter } from "next/navigation";
+import { useContext } from "react";
+import toast from "react-hot-toast";
+
+type RegisterFormElement = HTMLFormElement & {
+    elements: {
+        name: HTMLInputElement;
+        email: HTMLInputElement;
+        password: HTMLInputElement;
+    };
+};
 
 export default function SignUp() {
+    const { userCreate, user,updateUserProfile } = useContext(AuthContext);
+    const router = useRouter()
+
+    const handleRegister = async (e: React.FormEvent<RegisterFormElement>) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const name = form.elements.name.value.trim();
+        const email = form.elements.email.value.trim();
+        const password = form.elements.password.value;
+        console.log(name)
+
+        try {
+            const userCredential = await userCreate(email, password);
+            const user = userCredential.user;
+            console.log(user)
+            if (user.email) {
+                updateUserProfile(name,'' )
+                    .then(() => {
+                        toast.success("Sign Up Successful")
+                    })
+                    form.reset();
+                    router.push('/')
+            }
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                toast.error(error.message);
+            } else {
+                toast.error("An unknown error occurred during registration");
+            }
+        }
+    };
+
     return (
-        <div className="hero bg-base-200 min-h-screen">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Sign Up now!</h1>
-                    <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                        quasi. In deleniti eaque aut repudiandae et a id nisi.
-                    </p>
-                </div>
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <div className="card-body">
-                        <fieldset className="fieldset">
-                            <label className="label">Email</label>
-                            <input type="email" className="input" placeholder="Email" />
-                            <label className="label">Password</label>
-                            <input type="password" className="input" placeholder="Password" />
-                            <div><a className="link link-hover">Forgot password?</a></div>
-                            <button className="btn btn-neutral mt-4">Login</button>
-                        </fieldset>
-                    </div>
+        <div className="py-12 flex items-center justify-center bg-base-200 px-4">
+            <div className="w-full max-w-md shadow-2xl bg-base-100 rounded-2xl overflow-hidden">
+                {/* Sign Up Form Only */}
+                <div className="p-10">
+                    <h2 className="text-3xl font-bold mb-6 text-center">Sign Up</h2>
+                    <form className="space-y-4" onSubmit={handleRegister}>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your Name"
+                                className="input input-bordered w-full"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Your Email"
+                                className="input input-bordered w-full"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input
+                                type="password"
+                                name="password"
+                                placeholder="Password"
+                                className="input input-bordered w-full"
+                                required
+                                minLength={6}
+                            />
+                        </div>
+
+                        <button className="btn btn-primary w-full mt-4" type="submit">
+                            Create Account
+                        </button>
+
+                        <div className="divider">OR</div>
+
+                        <button className="btn btn-outline w-full" type="button">
+                            Continue with Google
+                        </button>
+
+                        <p className="text-center text-sm mt-4">
+                            Already have an account?{" "}
+                            <a href="/login" className="link link-primary">
+                                Login here
+                            </a>
+                        </p>
+                    </form>
                 </div>
             </div>
         </div>
-    )
+    );
 }
