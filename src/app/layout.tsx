@@ -32,8 +32,9 @@ export default function RootLayout({
       >
         <AuthProvider>
           <Navbar />
-
+          <div className="min-h-[calc(100vh-295px)]">
           {children}
+          </div>
 
           <Footer />
         </AuthProvider>

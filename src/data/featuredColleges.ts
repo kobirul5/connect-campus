@@ -70,5 +70,59 @@ export const featuredColleges: College[] = [
     rating: 4.3,
     description:
       "Metropolitan Institute is an energetic, forward-thinking educational institution located at the heart of the city. It offers students unparalleled access to industry connections, cultural experiences, and real-world learning opportunities. Known for its robust business and urban development programs, the institute hosts annual events like the Business Hackathon and Alumni Meet to help students network and showcase their skills. Its research initiatives focus on critical urban issues such as sustainable development and economic trends, empowering students to contribute solutions for modern city life. The campus is designed to foster collaboration, innovation, and inclusivity. Sports and recreation are an important part of student life at Metropolitan Institute, with popular facilities for basketball, badminton, and cricket that encourage teamwork and physical fitness. The institute’s diverse student body and active alumni network create a dynamic community where new ideas thrive and lifelong connections are made. With dedicated faculty, modern classrooms, and strong career support services, students graduate ready to excel in fast-paced urban industries. Choosing Metropolitan Institute means embracing a vibrant, multicultural environment that prepares learners to lead and innovate in the ever-evolving urban landscape."
+  },
+  {
+    id: 4,
+    name: "Skyline Arts Academy",
+    image: "/collage/4.jpg",
+    admissionDates: "Fall: Sep 1 | Spring: Jan 12",
+    events: [
+      { name: "Annual Art Expo", date: "Oct 22, 2023" },
+      { name: "Student Theatre Night", date: "Dec 2, 2023" }
+    ],
+    researchHistory: [
+      { title: "Modern Art Movements", year: 2023 },
+      { title: "Digital Media Studies", year: 2022 }
+    ],
+    sports: ["Yoga", "Dance", "Table Tennis"],
+    rating: 4.6,
+    description:
+      "Skyline Arts Academy is a premier institution for students passionate about the fine arts, performing arts, and creative expression. Nestled in a vibrant cultural district, it provides students with unique opportunities to collaborate with local artists and participate in city-wide exhibitions and performances. The academy’s curriculum combines traditional art disciplines with modern digital media studies, preparing students for evolving creative industries. Events like the Annual Art Expo and Student Theatre Night highlight student talent and foster a sense of community. Alongside their artistic pursuits, students can engage in recreational activities such as yoga, dance, and table tennis, promoting balance and well-being. Skyline’s dedicated faculty and artist-in-residence programs inspire students to push the boundaries of their creativity. Its strong network of alumni includes renowned designers, performers, and media professionals, offering mentorship and career pathways. Choosing Skyline Arts Academy means stepping into a world of imagination, collaboration, and artistic excellence."
+  },
+  {
+    id: 5,
+    name: "Highland Medical College",
+    image: "/collage/5.jpg",
+    admissionDates: "Fall: Aug 20 | Spring: Jan 5",
+    events: [
+      { name: "Health Awareness Camp", date: "Sep 25, 2023" },
+      { name: "Medical Research Conference", date: "Nov 30, 2023" }
+    ],
+    researchHistory: [
+      { title: "Cancer Research Innovations", year: 2023 },
+      { title: "Public Health Policies", year: 2022 }
+    ],
+    sports: ["Cricket", "Badminton", "Swimming"],
+    rating: 4.8,
+    description:
+      "Highland Medical College is dedicated to producing highly skilled healthcare professionals ready to serve communities worldwide. With state-of-the-art laboratories and partnerships with leading hospitals, students receive hands-on training and exposure to real-world medical scenarios. Annual events like the Health Awareness Camp and Medical Research Conference provide platforms for students to present research and engage with industry experts. The college’s research centers focus on critical areas such as cancer innovations and public health policies. To promote a healthy work-life balance, Highland offers excellent sports facilities for cricket, badminton, and swimming. A supportive network of faculty mentors guides students through rigorous academic and clinical training, ensuring they graduate as competent and compassionate medical practitioners. Highland’s reputation attracts top-tier students and faculty, making it a trusted name in medical education. By choosing Highland Medical College, students commit to excellence, service, and a future dedicated to advancing healthcare."
+  },
+  {
+    id: 6,
+    name: "Summit Business School",
+    image: "/collage/6.jpg",
+    admissionDates: "Fall: Sep 10 | Spring: Jan 20",
+    events: [
+      { name: "Entrepreneurship Summit", date: "Oct 12, 2023" },
+      { name: "Startup Pitch Fest", date: "Dec 8, 2023" }
+    ],
+    researchHistory: [
+      { title: "Global Market Trends", year: 2023 },
+      { title: "Startup Ecosystem", year: 2022 }
+    ],
+    sports: ["Basketball", "Tennis", "Football"],
+    rating: 4.4,
+    description:
+      "Summit Business School is a hub for aspiring entrepreneurs and future business leaders. Located in a dynamic urban center, the school offers unmatched opportunities for students to connect with industry mentors and investors. With events like the Entrepreneurship Summit and Startup Pitch Fest, students gain practical exposure to the startup ecosystem. The school’s research initiatives delve into global market trends and new business models, encouraging students to innovate and disrupt traditional industries. Summit emphasizes holistic development, offering sports facilities for basketball, tennis, and football to help students maintain a balanced lifestyle. Small class sizes and an experienced faculty ensure personalized learning experiences. Summit’s alumni network includes successful startup founders and corporate executives who frequently return to mentor current students. Choosing Summit Business School means stepping into an environment that nurtures ambition, creativity, and practical business skills for the leaders of tomorrow."
   }
 ];

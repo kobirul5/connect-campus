@@ -1,8 +1,11 @@
+'use client'
 import { featuredColleges } from '@/data/featuredColleges';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const CollegeCardsSection = () => {
+  const pathname = usePathname()
  
   return (
     <section className="py-16 px-4 ">
@@ -15,7 +18,7 @@ const CollegeCardsSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {featuredColleges.map(college => (
+          { (pathname === '/' ? featuredColleges.slice(0, 3) : featuredColleges).map(college => (
             <div 
               key={college.id} 
               className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 group"
