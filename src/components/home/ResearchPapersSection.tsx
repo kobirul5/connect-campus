@@ -88,7 +88,7 @@ const ResearchPapersSection = () => {
     });
 
     return (
-        <section className="py-16 px-4 bg-base-100">
+        <section className="pb-12 px-4 bg-base-100">
             <div className="container mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold mb-4">
@@ -96,9 +96,6 @@ const ResearchPapersSection = () => {
                             Featured Research Papers
                         </span>
                     </h2>
-                    <p className="text-lg max-w-2xl mx-auto">
-                        Cutting-edge research conducted by students and faculty at our recommended colleges
-                    </p>
                 </div>
 
                 {/* Search and Filter */}
