@@ -75,7 +75,7 @@ const ReviewSection = () => {
 
   return (
     <section className="py-16 px-4 ">
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">

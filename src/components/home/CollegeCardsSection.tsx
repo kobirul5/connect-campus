@@ -6,7 +6,7 @@ const CollegeCardsSection = () => {
  
   return (
     <section className="py-16 px-4 ">
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 relative">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
             Featured Institutions

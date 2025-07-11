@@ -1,6 +1,7 @@
 import CollegeCardsSection from "@/components/home/CollegeCardsSection";
 import CollegeGallery from "@/components/home/CollegeGallery";
 import HeroBanner from "@/components/home/HeroBanner";
+import ResearchPapersSection from "@/components/home/ResearchPapersSection";
 import ReviewSection from "@/components/home/ReviewSection";
 
 
@@ -12,6 +13,7 @@ export default function Home() {
           <CollegeCardsSection/>
           <CollegeGallery/>
           <ReviewSection/>
+          <ResearchPapersSection/>
     </div>
     </div>
   );

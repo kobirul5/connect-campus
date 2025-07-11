@@ -62,7 +62,7 @@ const CollegeDetails = () => {
             </div>
 
             {/* Main Content */}
-            <div className="container mx-auto px-4 max-w-7xl">
+            <div className="container mx-auto px-4 container">
                 <div className="flex flex-col md:flex-row gap-10">
                     {/* Left Side Card */}
                     <div className="md:w-1/3">
