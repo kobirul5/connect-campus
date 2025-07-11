@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { FaBars } from "react-icons/fa"; // react-icons for the mobile menu
+import { useAuth } from "@/hooks/useAuth";
 
 interface NavLink {
   name: string;
@@ -14,7 +16,12 @@ const navLinks: NavLink[] = [
   { name: "My College", path: "/my-college" },
 ];
 
+
+
 export default function Navbar() {
+
+  const {user} = useAuth()
+
   return (
     <header className="sticky top-0 z-50">
       <div className="navbar bg-base-100 shadow-lg px-4 sm:px-8">
@@ -22,21 +29,12 @@ export default function Navbar() {
         <div className="navbar-start">
           {/* Mobile Menu */}
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden"
+            >
+              <FaBars className="h-5 w-5" />
             </div>
             <ul
               tabIndex={0}
@@ -54,6 +52,8 @@ export default function Navbar() {
               ))}
             </ul>
           </div>
+
+          {/* Logo */}
           <Link
             href="/"
             className="btn btn-ghost text-xl sm:text-2xl font-bold text-primary"
@@ -80,12 +80,13 @@ export default function Navbar() {
 
         {/* Navbar End */}
         <div className="navbar-end">
-          <Link
-            href="/login"
-            className="btn btn-primary"
-          >
-            Login
-          </Link>
+          {user ? (
+            <Link href={'/profile'} className="font-semibold text-lg">{user.displayName}</Link>
+          ) : (
+            <Link href="/login" className="btn btn-primary">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </header>

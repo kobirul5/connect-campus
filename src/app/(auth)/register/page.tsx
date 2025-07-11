@@ -19,7 +19,7 @@ export default function SignUp() {
     if (!authContext) {
         throw new Error("AuthContext must be used within an AuthProvider");
     }
-    const { userCreate,updateUserProfile} = authContext;
+    const { userCreate,updateUserProfile, setLoading, googleLoginUser} = authContext;
 
     const handleRegister = async (e: React.FormEvent<RegisterFormElement>) => {
         e.preventDefault();
@@ -47,6 +47,22 @@ export default function SignUp() {
             } else {
                 toast.error("An unknown error occurred during registration");
             }
+        }
+    };
+
+     const handleGoogleUser = async () => {
+        setLoading(true);
+        try {
+            const result = await googleLoginUser();
+            if (result.user) {
+                toast.success("Login Successful with Google");
+                router.push('/')
+            }
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (error) {
+            toast.error("Google Login Failed");
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -103,7 +119,7 @@ export default function SignUp() {
 
                         <div className="divider">OR</div>
 
-                        <button className="btn btn-outline w-full" type="button">
+                        <button onClick={()=>handleGoogleUser()} className="btn btn-outline w-full" type="button">
                             Continue with Google
                         </button>
 
