@@ -7,8 +7,6 @@ export default function HeroBanner() {
     return (
         <div className="relative bg-white overflow-hidden">
             {/* Decorative blobs */}
-
-
             <div className="mx-auto flex flex-col lg:flex-row justify-between">
                 <div className="relative z-10">
                     <main className="mt-10 mx-auto ">
