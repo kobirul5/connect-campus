@@ -1,4 +1,5 @@
 import CollegeCardsSection from "@/components/home/CollegeCardsSection";
+import CollegeGallery from "@/components/home/CollegeGallery";
 import HeroBanner from "@/components/home/HeroBanner";
 
 
@@ -8,6 +9,7 @@ export default function Home() {
     <div className="container mx-auto">
           <HeroBanner></HeroBanner>
           <CollegeCardsSection/>
+          <CollegeGallery/>
     </div>
     </div>
   );

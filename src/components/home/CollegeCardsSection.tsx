@@ -11,7 +11,7 @@ const CollegeCardsSection = () => {
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
             Featured Institutions
           </span>
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+          
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
