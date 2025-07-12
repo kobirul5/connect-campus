@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { FaBars } from "react-icons/fa"; // react-icons for the mobile menu
+import { FaBars } from "react-icons/fa";
 import NavUser from "./NavUser";
 import CollegeSearch from "./CollegeSearch";
-
 
 interface NavLink {
   name: string;
@@ -18,24 +17,15 @@ const navLinks: NavLink[] = [
   { name: "My College", path: "/my-college" },
 ];
 
-
-
 export default function Navbar() {
-
-
-
   return (
     <header className="sticky top-0 z-50">
-      <div className="navbar bg-base-100 shadow-lg px-4 sm:px-8">
+      <div className="navbar bg-base-100 shadow px-4 sm:px-8">
         {/* Navbar Start */}
         <div className="navbar-start">
-          {/* Mobile Menu */}
-
-
-          {/* Logo */}
           <Link
             href="/"
-            className="btn btn-ghost text-xl sm:text-2xl font-bold text-primary"
+            className="btn btn-ghost text-lg sm:text-xl font-bold text-primary"
           >
             ConnectCampus
           </Link>
@@ -43,12 +33,12 @@ export default function Navbar() {
 
         {/* Navbar Center */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 space-x-2">
+          <ul className="menu menu-horizontal px-1 space-x-1">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
                   href={link.path}
-                  className="text-lg font-medium hover:text-primary focus:text-primary active:text-primary px-4 py-2 rounded-lg transition-colors duration-200"
+                  className="text-base font-medium hover:text-primary px-3 py-1 rounded transition-colors duration-200"
                 >
                   {link.name}
                 </Link>
@@ -58,33 +48,34 @@ export default function Navbar() {
         </div>
 
         {/* Navbar End */}
-        <div className="navbar-end">
-          <CollegeSearch/>
+        <div className="navbar-end gap-2">
+          <CollegeSearch />
           <NavUser />
           <div className="dropdown">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost lg:hidden"
-            >
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <FaBars className="h-5 w-5" />
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-y-2 right-0 top-"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-44 right-0 space-y-1"
             >
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.path}
-                    className="text-lg font-medium hover:text-primary focus:text-primary active:text-primary"
+                    className="text-base font-medium hover:text-primary"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href={'/profile'} className="font-semibold text-lg">Profile</Link>
+                <Link
+                  href="/profile"
+                  className="font-semibold text-base"
+                >
+                  Profile
+                </Link>
               </li>
             </ul>
           </div>

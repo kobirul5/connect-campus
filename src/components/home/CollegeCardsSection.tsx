@@ -1,12 +1,20 @@
 'use client'
-import { featuredColleges } from '@/data/featuredColleges';
+
+import useColleges from '@/hooks/useColleges';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+
 const CollegeCardsSection = () => {
   const pathname = usePathname()
- 
+
+  const { colleges, loading, } = useColleges();
+
+  if (loading) {
+    return <h1>Loading....</h1>
+  }
+  if (!colleges) return <p>No colleges found.</p>;
   return (
     <section className="py-16 px-4 ">
       <div className="container mx-auto">
@@ -14,21 +22,21 @@ const CollegeCardsSection = () => {
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
             Featured Institutions
           </span>
-          
+
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          { (pathname === '/' ? featuredColleges.slice(0, 3) : featuredColleges).map(college => (
-            <div 
-              key={college.id} 
+          {(pathname === '/' ? colleges.slice(0, 3) : colleges).map(college => (
+            <div
+              key={college._id}
               className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 group"
             >
               {/* College Image */}
               <figure className="relative h-48 overflow-hidden">
                 <Image
-                 fill
-                  src={college.image} 
-                  alt={college.name} 
+                  fill
+                  src={college.image}
+                  alt={college.name}
                   className="absolute w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
@@ -98,9 +106,9 @@ const CollegeCardsSection = () => {
 
                 {/* Details Button */}
                 <div className="card-actions justify-center mt-6">
-                  <Link href={`/colleges/${college.id}`} 
-                  
-                  className="btn btn-primary btn-outline w-full">
+                  <Link href={`/colleges/${college._id}`}
+
+                    className="btn btn-primary btn-outline w-full">
                     View Details
                   </Link>
                 </div>

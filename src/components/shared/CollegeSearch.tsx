@@ -3,33 +3,30 @@
 import { useState, useEffect, KeyboardEvent } from 'react';
 import { FaSearch, FaUniversity } from 'react-icons/fa';
 import Link from 'next/link';
-import { College, featuredColleges } from '@/data/featuredColleges';
-
-
-
+import { College } from '@/data/featuredColleges';
+import useColleges from '@/hooks/useColleges';
 
 export default function CollegeSearch() {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState<College[]>([]);
   const [isVisible, setIsVisible] = useState(false);
 
+  const { colleges, loading } = useColleges();
+
   useEffect(() => {
-    if (searchTerm.trim() === '') {
+    if (!colleges || searchTerm.trim() === '') {
       setResults([]);
       setIsVisible(false);
       return;
     }
 
-    const filtered = featuredColleges.filter(
-      (college) =>
-        college.name.toLowerCase().includes(searchTerm.toLowerCase()) 
-      // ||
-        // college.code.toLowerCase().includes(searchTerm.toLowerCase())
+    const filtered = colleges.filter((college) =>
+      college.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     setResults(filtered);
     setIsVisible(filtered.length > 0);
-  }, [searchTerm]);
+  }, [searchTerm, colleges]);
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Escape') {
@@ -42,13 +39,14 @@ export default function CollegeSearch() {
       <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
         <input
           type="text"
-          placeholder="Search colleges..."
+          placeholder={loading ? "Loading colleges..." : "Search colleges..."}
           className="w-full px-3 py-2 outline-none"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={() => searchTerm && setIsVisible(results.length > 0)}
           onBlur={() => setTimeout(() => setIsVisible(false), 200)}
           onKeyDown={handleKeyDown}
+          disabled={loading}
         />
         <button className="px-3 text-gray-600">
           <FaSearch />
@@ -60,23 +58,24 @@ export default function CollegeSearch() {
           {results.length > 0 ? (
             <ul>
               {results.map((college) => (
-                <li key={college.id}>
+                <li key={college._id}>
                   <Link
-                    href={`/colleges/${college.id}`}
+                    href={`/colleges/${college._id}`}
                     className="flex items-center px-3 py-2 hover:bg-gray-100"
                     onClick={() => setIsVisible(false)}
                   >
                     <FaUniversity className="mr-2 text-gray-500" />
                     <div>
-                      <span className="font-medium">{college.name}</span>{' '}
-                      {/* <span className="text-xs text-gray-500">({college.code})</span> */}
+                      <span className="font-medium">{college.name}</span>
                     </div>
                   </Link>
                 </li>
               ))}
             </ul>
           ) : (
-            <div className="px-3 py-2 text-sm text-gray-500">No colleges found</div>
+            <div className="px-3 py-2 text-sm text-gray-500">
+              {loading ? 'Loading colleges...' : 'No colleges found'}
+            </div>
           )}
         </div>
       )}
