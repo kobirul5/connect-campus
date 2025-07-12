@@ -1,5 +1,6 @@
 'use client'
 import { AuthContext } from "@/components/context/AuthProvider";
+import useAxiosPublic from "@/hooks/axiosPublic";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import toast from "react-hot-toast";
@@ -14,6 +15,7 @@ type RegisterFormElement = HTMLFormElement & {
 
 export default function SignUp() {
     const authContext = useContext(AuthContext);
+    const axiosPublic = useAxiosPublic()
     const router = useRouter()
 
     if (!authContext) {
@@ -27,6 +29,7 @@ export default function SignUp() {
         const name = form.elements.name.value.trim();
         const email = form.elements.email.value.trim();
         const password = form.elements.password.value;
+        const registerData = {name, email, password}
         console.log(name)
 
         try {
@@ -34,7 +37,9 @@ export default function SignUp() {
             const user = userCredential.user;
             console.log(user)
             if (user.email) {
-                updateUserProfile(name,'' )
+             const res = await axiosPublic.post('/api/user', registerData)
+                console.log(res,"-----------")
+                await updateUserProfile(name,'' )
                     .then(() => {
                         toast.success("Sign Up Successful")
                     })

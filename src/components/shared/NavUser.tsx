@@ -26,13 +26,13 @@ export default function NavUser() {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow top-10"
                     >
                         <li>
 
-                            <Link href={'/profile'} className="font-semibold text-lg">Profile</Link>
+                            <Link href={'/profile'} className="text-lg">Profile</Link>
                         </li>
-                        <li><button onClick={logOut}>Logout</button></li>
+                        <li><button className="text-lg" onClick={logOut}>Logout</button></li>
                     </ul>
                 </div>
             ) : (

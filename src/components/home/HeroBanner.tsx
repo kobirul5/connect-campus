@@ -5,7 +5,7 @@ import Lottie from 'lottie-react';
 
 export default function HeroBanner() {
     return (
-        <div className="relative bg-white overflow-hidden">
+        <div className="relative bg-white overflow-hidden px-4">
             {/* Decorative blobs */}
             <div className="mx-auto flex flex-col lg:flex-row justify-between">
                 <div className="relative z-10">
