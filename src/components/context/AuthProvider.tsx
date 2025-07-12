@@ -24,6 +24,8 @@ import {
 export interface AuthContextType {
     user: FirebaseUser | null;
     loading: boolean;
+    userDB: IUser | null;              
+  setUserDB: (userDB: IUser | null) => void; 
     setLoading: (loading: boolean) => void;
     userCreate: (email: string, password: string) => Promise<any>;
     userLogin: (email: string, password: string) => Promise<any>;
@@ -38,8 +40,21 @@ interface AuthProviderProps {
     children: ReactNode;
 }
 
+export interface IUser {
+    _id:string;
+    name: string;
+    email: string;
+    password?: string;
+    phone?: string;
+    picture?: string;
+    address?: string;
+    university?:string;
+    role: "admin" | "user";
+}
+
 const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const [user, setUser] = useState<FirebaseUser | null>(null);
+    const [userDB, setUserDB] = useState<IUser | null>(null)
     const [loading, setLoading] = useState<boolean>(true);
     const axiosPublic = useAxiosPublic();
 
@@ -86,6 +101,8 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const authInfo: AuthContextType = {
         user,
         loading,
+        userDB,
+        setUserDB,
         setLoading,
         userCreate,
         userLogin,

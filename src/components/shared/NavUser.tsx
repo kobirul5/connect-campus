@@ -1,11 +1,29 @@
 'use client'
 
+import useAxiosPublic from "@/hooks/axiosPublic";
 import { useAuth } from "@/hooks/useAuth"
-import Image from "next/image"
 import Link from "next/link"
+import { useEffect } from "react";
 
 export default function NavUser() {
-    const { user, logOut } = useAuth()
+    const { user, logOut, setUserDB, userDB } = useAuth()
+    const axiosPublic = useAxiosPublic()
+    
+      useEffect(() => {
+        if (!user?.email) return;
+    
+        const fetchUserData = async () => {
+          try {
+            const res = await axiosPublic.get(`/api/user/${user.email}`);
+            setUserDB(res.data.data);
+          } catch (err) {
+            console.error("Error fetching user data:", err);
+          }
+        };
+    
+        fetchUserData();
+      }, [user, axiosPublic]);
+    
 
 
     return (
@@ -14,12 +32,10 @@ export default function NavUser() {
                 <div className="dropdown dropdown-end flex justify-center items-center">
                     <span className="text-xl mr-2 hidden md:flex">{user.displayName}</span>
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full overflow-hidden">
-                            <Image
+                        <div className="w-10 h-10 rounded-full overflow-hidden">
+                            <img
                                 alt="User Avatar"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                                width={40}
-                                height={40}
+                                src={userDB?.picture}
                                 className="object-cover w-full h-full"
                             />
                         </div>

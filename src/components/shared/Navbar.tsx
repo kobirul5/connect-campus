@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FaBars } from "react-icons/fa"; // react-icons for the mobile menu
 import NavUser from "./NavUser";
+import CollegeSearch from "./CollegeSearch";
 
 
 interface NavLink {
@@ -58,6 +59,7 @@ export default function Navbar() {
 
         {/* Navbar End */}
         <div className="navbar-end">
+          <CollegeSearch/>
           <NavUser />
           <div className="dropdown">
             <div
