@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { FaBars } from "react-icons/fa"; // react-icons for the mobile menu
-import { useAuth } from "@/hooks/useAuth";
+import NavUser from "./NavUser";
+
 
 interface NavLink {
   name: string;
@@ -20,7 +21,7 @@ const navLinks: NavLink[] = [
 
 export default function Navbar() {
 
-  const {user} = useAuth()
+
 
   return (
     <header className="sticky top-0 z-50">
@@ -28,30 +29,7 @@ export default function Navbar() {
         {/* Navbar Start */}
         <div className="navbar-start">
           {/* Mobile Menu */}
-          <div className="dropdown">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost lg:hidden"
-            >
-              <FaBars className="h-5 w-5" />
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-y-2"
-            >
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.path}
-                    className="text-lg font-medium hover:text-primary focus:text-primary active:text-primary"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+
 
           {/* Logo */}
           <Link
@@ -80,13 +58,34 @@ export default function Navbar() {
 
         {/* Navbar End */}
         <div className="navbar-end">
-          {user ? (
-            <Link href={'/profile'} className="font-semibold text-lg">{user.displayName}</Link>
-          ) : (
-            <Link href="/login" className="btn btn-primary">
-              Login
-            </Link>
-          )}
+          <NavUser />
+          <div className="dropdown">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden"
+            >
+              <FaBars className="h-5 w-5" />
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-y-2 right-0 top-"
+            >
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.path}
+                    className="text-lg font-medium hover:text-primary focus:text-primary active:text-primary"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href={'/profile'} className="font-semibold text-lg">Profile</Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
