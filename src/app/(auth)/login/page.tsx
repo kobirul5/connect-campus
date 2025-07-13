@@ -91,7 +91,7 @@ export default function Login() {
                         />
                     </div>
 
-                    <button className="btn btn-primary w-full mt-4" type="submit">
+                    <button className="btn bg-emerald w-full mt-4" type="submit">
                         Login
                     </button>
 
@@ -107,7 +107,7 @@ export default function Login() {
 
                     <p className="text-center text-sm mt-4">
                         Don&apos;t have an account?{" "}
-                        <a href="/register" className="link link-primary">
+                        <a href="/register" className="link link-emerald">
                             Sign up here
                         </a>
                     </p>

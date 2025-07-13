@@ -19,7 +19,7 @@ const CollegeCardsSection = () => {
     <section className="py-16 px-4 ">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 relative">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald to-secondary">
             Featured Institutions
           </span>
 
@@ -42,7 +42,7 @@ const CollegeCardsSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 <div className="absolute bottom-4 left-4">
                   <h3 className="text-2xl font-bold text-white ">{college.name}</h3>
-                  <div className="badge badge-primary gap-1 mt-1">
+                  <div className="badge badge-emerald gap-1 mt-1">
                     Rating: {college.rating}
                   </div>
                 </div>
@@ -52,7 +52,7 @@ const CollegeCardsSection = () => {
               <div className="card-body">
                 {/* Admission Dates */}
                 <div className="flex items-start gap-3">
-                  <div className="bg-primary/10 p-2 rounded-lg" />
+                  <div className="bg-emerald/10 p-2 rounded-lg" />
                   <div>
                     <h4 className="font-semibold">Admission Dates</h4>
                     <p className="text-sm">{college.admissionDates}</p>
@@ -108,7 +108,7 @@ const CollegeCardsSection = () => {
                 <div className="card-actions justify-center mt-6">
                   <Link href={`/colleges/${college._id}`}
 
-                    className="btn btn-primary btn-outline w-full">
+                    className="btn bg-emerald btn-outline w-full">
                     View Details
                   </Link>
                 </div>

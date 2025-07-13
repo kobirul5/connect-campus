@@ -64,7 +64,7 @@ export default function ReviewForm({ onSubmit }: ReviewFormProps) {
       
       <button
         type="submit"
-        className="btn btn-primary"
+        className="btn bg-emerald"
         disabled={submitting}
       >
         {submitting ? 'Submitting...' : 'Submit Review'}

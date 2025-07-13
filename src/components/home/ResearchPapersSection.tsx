@@ -92,7 +92,7 @@ const ResearchPapersSection = () => {
             <div className="container mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold mb-4">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald to-secondary">
                             Featured Research Papers
                         </span>
                     </h2>
@@ -141,10 +141,10 @@ const ResearchPapersSection = () => {
                                 <div className="card-body">
                                     <div className="flex items-start justify-between">
                                         <div>
-                                            <span className="badge badge-primary mb-2">{paper.field}</span>
+                                            <span className="badge badge-emerald mb-2">{paper.field}</span>
                                             <h3 className="card-title">{paper.title}</h3>
                                         </div>
-                                        <FaBookOpen className="text-primary/20 text-2xl" />
+                                        <FaBookOpen className="text-emerald/20 text-2xl" />
                                     </div>
 
                                     <div className="flex items-center text-sm text-gray-500 mb-3">

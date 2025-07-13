@@ -12,7 +12,7 @@ const CollegeGallery = () => {
       <div className="container  mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald to-secondary">
               Our Graduating Classes
             </span>
           </h2>

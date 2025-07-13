@@ -78,7 +78,7 @@ const ReviewSection = () => {
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald to-secondary">
               Student Reviews
             </span>
           </h2>
@@ -121,7 +121,7 @@ const ReviewSection = () => {
                           <span className="ml-2 text-sm">{review.rating.toFixed(1)}</span>
                         </div>
                       </div>
-                      <FaQuoteLeft className="text-primary opacity-20 text-3xl" />
+                      <FaQuoteLeft className="text-emerald opacity-20 text-3xl" />
                     </div>
                     
                     <p className="mb-6">{review.content}</p>
@@ -166,7 +166,7 @@ const ReviewSection = () => {
 
         {/*ToDO: Add Review CTA */}
         {/* <div className="text-center mt-12">
-          <button className="btn btn-primary">
+          <button className="btn bg-emerald">
             Share Your Experience
           </button>
         </div> */}

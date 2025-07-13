@@ -63,7 +63,7 @@ export default function NavUser() {
           </ul>
         </div>
       ) : (
-        <Link href="/login" className="btn btn-primary btn-sm">
+        <Link href="/login" className="btn bg-emerald btn-sm">
           Login
         </Link>
       )}

@@ -25,7 +25,7 @@ export default function Navbar() {
         <div className="navbar-start">
           <Link
             href="/"
-            className="btn btn-ghost text-lg sm:text-xl font-bold text-primary"
+            className="btn btn-ghost text-lg sm:text-xl font-bold text-emerald"
           >
             ConnectCampus
           </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
               <li key={link.name}>
                 <Link
                   href={link.path}
-                  className="text-base font-medium hover:text-primary px-3 py-1 rounded transition-colors duration-200"
+                  className="text-base font-medium hover:text-emerald px-3 py-1 rounded transition-colors duration-200"
                 >
                   {link.name}
                 </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
                 <li key={link.name}>
                   <Link
                     href={link.path}
-                    className="text-base font-medium hover:text-primary"
+                    className="text-base font-medium hover:text-emerald"
                   >
                     {link.name}
                   </Link>

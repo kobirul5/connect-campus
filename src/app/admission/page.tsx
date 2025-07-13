@@ -24,11 +24,11 @@ export default function AdmissionPage() {
             <Link 
               href={`/admission/admission-form/${college._id}`} 
               key={college._id}
-              className="block p-4 border border-gray-200 rounded-lg hover:bg-primary-50 hover:border-primary-200 transition-colors"
+              className="block p-4 border border-gray-200 rounded-lg hover:bg-emerald-50 hover:border-emerald-200 transition-colors"
             >
               <div className="flex justify-between items-center">
                 <span className="font-medium text-gray-700">{college.name}</span>
-                <span className="text-primary-600">→</span>
+                <span className="text-emerald-600">→</span>
               </div>
             </Link>
           ))}

@@ -177,7 +177,7 @@ export default function CollegeAdmissionForm() {
           <div className="pt-4">
             <button
               type="submit"
-              className="w-full bg-primary hover:bg-primary text-white font-medium py-2 px-4 rounded-md"
+              className="w-full bg-emerald hover:bg-emerald text-white font-medium py-2 px-4 rounded-md"
             >
               Submit Application
             </button>

@@ -89,7 +89,7 @@ export default function CollegeDetails() {
                 </div>
                 <Link
                   href={`/admission?college=${_id}`}
-                  className="btn btn-emerald btn-block"
+                  className="btn bg-emerald btn-block"
                   aria-label={`Apply to ${name}`}
                 >
                   Apply Now

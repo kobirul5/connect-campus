@@ -13,7 +13,7 @@ export default function HeroBanner() {
                         <div className="sm:text-center lg:text-left">
                             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                                 <span className="block">Book College Facilities</span>
-                                <span className="block text-primary">With Ease</span>
+                                <span className="block text-emerald">With Ease</span>
                             </h1>
 
                             <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
@@ -31,15 +31,15 @@ export default function HeroBanner() {
                                         placeholder="Search colleges or facilities..."
                                     />
                                 </div>
-                                <button className="btn btn-primary py-6 px-8 text-lg gap-2">
+                                <button className="btn bg-emerald py-6 px-8 text-lg gap-2">
                                     Find Facilities
                                     <FaArrowRight />
                                 </button>
                             </div>
 
                             <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
-                                <div className="bg-primary-50 p-4 rounded-xl border border-primary-100 hover:-translate-y-1 transition">
-                                    <div className="text-primary-600 text-2xl mb-2">
+                                <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-100 hover:-translate-y-1 transition">
+                                    <div className="text-emerald-600 text-2xl mb-2">
                                         <FaUniversity />
                                     </div>
                                     <h3 className="font-semibold text-gray-900">250+ Colleges</h3>

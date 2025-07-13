@@ -118,7 +118,7 @@ export default function SignUp() {
                             />
                         </div>
 
-                        <button className="btn btn-primary w-full mt-4" type="submit">
+                        <button className="btn bg-emerald w-full mt-4" type="submit">
                             Create Account
                         </button>
 
@@ -130,7 +130,7 @@ export default function SignUp() {
 
                         <p className="text-center text-sm mt-4">
                             Already have an account?{" "}
-                            <a href="/login" className="link link-primary">
+                            <a href="/login" className="link link-emerald">
                                 Login here
                             </a>
                         </p>
