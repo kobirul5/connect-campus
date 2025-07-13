@@ -41,7 +41,7 @@ const CollegeCardsSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 <div className="absolute bottom-4 left-4">
-                  <h3 className="text-2xl font-bold text-white">{college.name}</h3>
+                  <h3 className="text-2xl font-bold text-white ">{college.name}</h3>
                   <div className="badge badge-primary gap-1 mt-1">
                     Rating: {college.rating}
                   </div>

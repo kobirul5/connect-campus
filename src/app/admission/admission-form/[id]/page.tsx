@@ -1,7 +1,9 @@
 'use client';
 
-import { useParams } from 'next/navigation';
+import useAxiosPublic from '@/hooks/axiosPublic';
+import { useParams, useRouter } from 'next/navigation';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 interface AdmissionFormData {
   name: string;
@@ -15,6 +17,8 @@ interface AdmissionFormData {
 
 export default function CollegeAdmissionForm() {
   const params = useParams();
+  const axiosPublic = useAxiosPublic()
+  const router = useRouter()
 
   const [formData, setFormData] = useState<AdmissionFormData>({
     name: '',
@@ -38,11 +42,31 @@ export default function CollegeAdmissionForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
-    alert('Application submitted successfully!');
-    // এখানে API POST করতে পারো
+
+    // api call
+    try {
+      const res = await axiosPublic.post('/api/admission', formData);
+      if (res.data.success) {
+        toast.success("success fully Applied")
+        setFormData({
+          name: '',
+          subject: '',
+          email: '',
+          phone: '',
+          address: '',
+          dob: '',
+          image: '',
+        })
+        router.push('/my-college')
+      } else {
+        toast.error('Failed to load colleges');
+      }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
+      toast.error(err.message || 'An error occurred');
+    }
   };
 
   return (

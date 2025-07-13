@@ -72,7 +72,7 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-6 text-white">
+        <div className="bg-gradient-to-r from-primary-600 to-primary-800 p-6 text-white">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="w-16 h-16 rounded-full overflow-hidden bg-white">
@@ -88,7 +88,7 @@ export default function ProfilePage() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold">{userData.name || "N/A"}</h1>
-                <p className="text-blue-100">
+                <p className="text-primary-100">
                   {userData.university || "No university"}
                 </p>
               </div>

@@ -24,7 +24,7 @@ export default function NotFoundPage() {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <button
-                        className="btn btn-primary gap-2"
+                        className="btn bg-emerald gap-2"
                         onClick={() => router.push('/')}
                     >
                         <FaHome /> Go Home

@@ -89,7 +89,7 @@ export default function CollegeDetails() {
                 </div>
                 <Link
                   href={`/admission?college=${_id}`}
-                  className="btn btn-primary btn-block"
+                  className="btn btn-emerald btn-block"
                   aria-label={`Apply to ${name}`}
                 >
                   Apply Now
@@ -112,7 +112,7 @@ export default function CollegeDetails() {
 
             {/* Events */}
             <section>
-              <h2 className="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">
+              <h2 className="text-3xl font-bold mb-6 border-b-2 border-emerald pb-2">
                 Upcoming Events
               </h2>
               {events.length > 0 ? (
@@ -142,13 +142,13 @@ export default function CollegeDetails() {
 
             {/* Research */}
             <section>
-              <h2 className="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">
+              <h2 className="text-3xl font-bold mb-6 border-b-2 border-emerald pb-2">
                 Research Works
               </h2>
               {researchHistory.length > 0 ? (
                 <div className="overflow-x-auto rounded-lg border border-base-300">
                   <table className="table w-full">
-                    <thead className="bg-primary text-primary-content">
+                    <thead className="bg-emerald ">
                       <tr>
                         <th>Title</th>
                         <th>Year</th>
@@ -173,7 +173,7 @@ export default function CollegeDetails() {
 
             {/* Sports */}
             <section>
-              <h2 className="text-3xl font-bold mb-6 border-b-2 border-primary pb-2">
+              <h2 className="text-3xl font-bold mb-6 border-b-2 border-emerald pb-2">
                 Sports Categories
               </h2>
               {sports.length > 0 ? (
@@ -181,7 +181,7 @@ export default function CollegeDetails() {
                   {sports.map((sport, idx) => (
                     <span
                       key={idx}
-                      className="badge badge-primary text-white px-4 py-3 text-lg"
+                      className="badge badge-emerald text-white px-4 py-3 text-lg"
                     >
                       {sport}
                     </span>

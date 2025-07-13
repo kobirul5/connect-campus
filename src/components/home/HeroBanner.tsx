@@ -38,8 +38,8 @@ export default function HeroBanner() {
                             </div>
 
                             <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
-                                <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 hover:-translate-y-1 transition">
-                                    <div className="text-blue-600 text-2xl mb-2">
+                                <div className="bg-primary-50 p-4 rounded-xl border border-primary-100 hover:-translate-y-1 transition">
+                                    <div className="text-primary-600 text-2xl mb-2">
                                         <FaUniversity />
                                     </div>
                                     <h3 className="font-semibold text-gray-900">250+ Colleges</h3>
